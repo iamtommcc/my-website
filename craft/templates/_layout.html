@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://use.typekit.net/mof5lli.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="stylesheet" href="/css/main.css">
+
+	<title>HTML5 Test Page</title>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Archivo+Narrow:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="top" class="page" role="document">
+	<header role="banner" class="main-header">
+		<nav class="main-header__nav">
+
+			<div class="container">
+
+				<ul class="main-header__nav-list">
+					<a href="{{ siteUrl}}">
+					<li class="main-header__logo">
+
+					</li>
+						</a>
+
+					<li class="main-header__nav-item">
+						<a href="{{ siteUrl}}portfolio" class="main-header__nav-link">Portfolio</a>
+					</li>
+					<li class="main-header__nav-item">
+						<a href="{{ siteUrl}}blog" class="main-header__nav-link">Blog</a>
+					</li>
+					<li class="main-header__nav-item">
+						<a href="{{ siteUrl}}about" class="main-header__nav-link">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	{% if craft.request.lastSegment == 'portfolio' %}
+	{% set mainClass = 'portfolio' %}
+	{% else %}
+	{% set mainClass = '' %}
+	{% endif %}
+	<main class="{{ mainClass }}">
+		{% block content %}
+		{% endblock %}
+	</main>
+
+	<footer class="main-footer">
+		<div class="container">
+		<div class="main-footer__cta">
+			<p>Need my help for a development or design project?</p>
+			<a href="mailto:tom@tomm.cc" class="main-footer__contact-button">Get In Touch</a>
+		</div>
+			</div>
+	</footer>
+
+</div>
+</body>
+</html>

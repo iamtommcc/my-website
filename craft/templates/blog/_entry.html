@@ -1,0 +1,21 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<section class="top-block top-block--short-width">
+    <div class="top-block__inner">
+        <h1 class="top-block__headline">{{ entry.title }}</h1>
+        <p class="top-block__byline" style="clear:left;">{{ entry.summary }}</p>
+    </div>
+</section>
+
+<section class="blog-entry">
+
+    <article class="blog">
+        {{ entry.body }}
+    </article>
+
+
+</section>
+
+{% endblock %}

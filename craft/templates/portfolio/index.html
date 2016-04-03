@@ -1,0 +1,41 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<section class="top-block top-block--black-bg">
+    <div class="top-block__inner">
+        <h1 class="top-block__headline">Portfolio Of Work</h1>
+        <p class="top-block__byline">I am a cool guy.</p>
+    </div>
+</section>
+
+<section class="home-featured" style="background: none;">
+    <div class="home-featured__container">
+
+    {% for entry in craft.entries.section('portfolio') %}
+
+            <a href="{{ entry.url }}" class="home-featured__project">
+                {% set image = entry.images.first() %}
+                {% if image %}
+                <img src=" {{ image.url }}" class="home-featured__image">
+                {% endif %}
+
+                <div class="home-featured__bottom">
+                    <h3 class="home-featured__title">{{ entry.title }}</h3>
+                    <p class="home-featured__description">{% if entry.workCategories | length %}
+                        {{ entry.workCategories | join(', ') }}
+                        {% endif %}</p>
+                </div>
+            </a>
+
+
+    {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+
+

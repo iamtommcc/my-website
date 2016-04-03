@@ -1,0 +1,38 @@
+.blog-entries__item {
+  @include _(6 12 12);
+
+
+}
+
+.blog-entries__item,
+.home-skills__blog {
+    display: block;
+    margin-bottom: $v-unit * 0.5;
+    color: $body-text;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+      color: $body-text;
+    }
+
+}
+
+.blog-entries {
+  max-width: $max-width;
+  @include _(clear);
+  margin: 0 auto;
+  padding-top: $v-unit;
+}
+
+.blog-entry {
+  @include _(clear);
+  max-width: $max-width;
+  margin: 0 auto;
+  padding-top: $v-unit;
+  padding-bottom: $v-unit;
+
+  .blog {
+    @include _(7);
+  }
+}

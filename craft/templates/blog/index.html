@@ -1,0 +1,33 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<section class="top-block top-block--no-bg">
+    <div class="top-block__inner">
+        <h1 class="top-block__headline">My Blog</h1>
+        <p class="top-block__byline">I am a cool guy.</p>
+    </div>
+</section>
+
+<section class="blog-entries">
+    {% for item in craft.entries.section('blog') %}
+
+    <a class="blog-entries__item" href="{{ item.url }}">
+
+
+        <h3 class="home-skills__blog-title">{{ item.title }}</h3>
+        <div class="home-skills__blog-date">
+            {{ item.postDate.format('F d, Y') }} - <span class="blog-entries__categories">
+            {% for tag in item.workCategories %}
+             {{ tag }},
+            {% endfor %} </span>
+        </div>
+        <p class="home-skills__blog-summary">{{ item.summary }}</p>
+
+    </a>
+
+
+    {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+$flint: (
+"breakpoints": (
+  "desktop": (
+          "columns": 12,
+          "breakpoint": 80em
+  ),
+  "tablet": (
+          "columns": 12,
+          "breakpoint": 60em
+  ),
+  "mobile": (
+          "columns": 12,
+          "breakpoint": 36em
+  )
+),
+"settings": (
+  "default": "mobile",
+  "grid": "fluid",
+  "gutter": 2.0em,
+  "float-direction": "left",
+  "max-width": true,
+  "center-container": true,
+  "border-box-sizing": true,
+  "instance-maps": true,
+  "support-syntax": false,
+  "debug-mode": false
+)
+);
+
+@import '../node_modules/normalize.css/normalize';
+@import '../node_modules/flint-gs/stylesheets/flint';
+
+@import 'core/variables';
+
+@import 'core/base';
+@import 'core/typography';
+
+@import 'modules/header';
+@import 'modules/footer';
+@import 'modules/content';
+@import 'modules/navigation';
+@import 'modules/forms';
+@import 'modules/buttons';
+
+
+@import 'pages/home';
+@import 'pages/portfolio';
+@import 'pages/blog';
+

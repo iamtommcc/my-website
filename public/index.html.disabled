@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>HTML5 Test Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Archivo+Narrow:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div id="top" class="page" role="document">
+      <header role="banner" class="main-header">
+        <nav class="main-header__nav">
+        <div class="main-header__logo">
+
+        </div>
+
+          <div class="container">
+
+          <ul class="main-header__nav-list">
+            <li class="main-header__nav-item">
+              <a href="#" class="main-header__nav-link">Portfolio</a>
+            </li>
+            <li class="main-header__nav-item">
+              <a href="#" class="main-header__nav-link">About</a>
+            </li>
+            <li class="main-header__nav-item">
+              <a href="#" class="main-header__nav-link">Contact</a>
+            </li>
+          </ul>
+            </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="home-top">
+          <h1 class="home-top__headline">Design. Marketing. Everything.</h1>
+          <p class="home-top__byline">I am a cool guy.</p>
+        </section>
+
+        <section class="home-featured">
+          <div class="home-featured__project">
+            <div class="home-featured__box">
+              <div class="home-featured__blur-image" style="background-image: url('/images/test.jpg');"></div>
+              <div class="home-featured__image"></div>
+              <h2 class="home-featured__heading">Featured Project</h2>
+
+              <h3 class="home-featured__title">Project Title</h3>
+              <a href="#" class="home-featured__button button button--grey">View Project</a>
+            </div>
+          </div>
+
+          <div class="home-featured__blog">
+            <div class="home-featured__box">
+              <div class="home-featured__blur-image" style="background-image: url('/images/test.jpg');"></div>
+              <div class="home-featured__image"></div>
+              <h2 class="home-featured__heading">Featured Project</h2>
+
+              <h3 class="home-featured__title">Project Title</h3>
+              <a href="#" class="home-featured__button button button--grey">View Project</a>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="home-skills">
+          <div class="container">
+          <div class="home-skills__skillset">
+            <h2 class="home-skills__heading">Front-end</h2>
+            <ul>
+              <li>SASS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="home-skills__skillset">
+            <h2 class="home-skills__heading">Back-end</h2>
+            <ul>
+              <li>SASS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="home-skills__skillset">
+            <h2 class="home-skills__heading">Tools & Software</h2>
+            <ul>
+              <li>SASS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+            </div>
+        </section>
+
+        <section class="home-cta">
+          <div class="home-cta__message">Like what you see? I'd love to chat!</div>
+          <a href="#" class="button home-cta__button">Get in touch</a>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+      Built in sunny Brisbane, Australia.
+      </footer>
+     
+    </div>
+  </body>
+</html>

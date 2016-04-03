@@ -1,0 +1,34 @@
+.main-footer {
+  padding-top: $v-unit;
+  padding-bottom: $v-unit;
+  @include purple-gradient;
+  color: #CDD1E8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 12em;
+  width: 100%;
+}
+
+.main-footer__cta {
+
+  @include _(mobile) {
+    text-align: center;
+  }
+  @include _(12);
+}
+
+.main-footer__contact-button {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: 1px solid;
+  color: #ebeeff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: white;
+    color: $main-purple;
+    border-color: white;
+  }
+}

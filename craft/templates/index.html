@@ -1,0 +1,95 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+<section class="top-block">
+ <div class="top-block__inner">
+ <h1 class="top-block__headline">Design. Marketing. Everything.</h1>
+ <p class="top-block__byline">I am a cool guy.</p>
+  </div>
+</section>
+
+<section class="home-featured">
+ <div class="home-featured__container">
+  {% for entry in craft.entries.section('portfolio') %}
+
+   <a href="{{ entry.url }}" class="home-featured__project">
+    {% set image = entry.images.first() %}
+    {% if image %}
+    <img src=" {{ image.url }}" class="home-featured__image">
+    {% endif %}
+
+    <div class="home-featured__bottom">
+     <h3 class="home-featured__title">{{ entry.title }}</h3>
+     <p class="home-featured__description">{% if entry.workCategories | length %}
+      {{ entry.workCategories | join(', ') }}
+      {% endif %}</p>
+    </div>
+   </a>
+
+
+  {% endfor %}
+</div>
+</section>
+
+<section class="home-skills">
+ <div class="home-skills__listings">
+  <h2 class="interface-header">Skills</h2>
+
+  <div class="home-skills__skillset">
+   <h2 class="home-skills__heading">Front-end</h2>
+   <p>HTML, CSS, JavaScript (ES6), SASS, jQuery, Susy, Flint.gs</p>
+  </div>
+  <div class="home-skills__skillset">
+   <h2 class="home-skills__heading">Back-end</h2>
+   <p>PHP, WordPress, WooCommerce, Craft CMS, Laravel</p>
+  </div>
+  <div class="home-skills__skillset">
+   <h2 class="home-skills__heading">Tools & Software</h2>
+   <p>Gulp, NPM, Adobe Creative Suite, Sublime Text, PHPStorm, Git, Vagrant</p>
+  </div>
+  </div>
+
+ <div class="home-skills__blogs">
+  <h2 class="interface-header">Blog Posts</h2>
+
+  {% for item in craft.entries.section('blog') %}
+
+  <a class="home-skills__blog" href="{{ item.url }}">
+
+
+   <h3 class="home-skills__blog-title">{{ item.title }}</h3>
+   <div class="home-skills__blog-date">
+    {{ item.postDate.format('F d, Y') }} - <span class="blog-entries__categories">
+            {% if item.workCategories | length %}
+                        {{ item.workCategories | join(', ') }}
+                        {% endif %} </span>
+   </div>
+   <p class="home-skills__blog-summary">{{ item.summary }}</p>
+
+  </a>
+
+
+  {% endfor %}
+ </div>
+</section>
+{% endblock %}

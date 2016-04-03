@@ -1,0 +1,44 @@
+main.portfolio {
+  @include black-gradient;
+  min-height: calc(100vh - 12em);
+}
+
+.portfolio-entry {
+  max-width: $max-width;
+  @include _(clear);
+  margin:0 auto;
+  padding-top: $v-unit;
+}
+
+.portfolio-entry__text {
+  @include _(5);
+}
+
+.portfolio-entry__main-image {
+  display: none;
+
+  @include _(from tablet to infinity) {
+    display: block;
+    padding: 0;
+    margin-top: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+    @include _(6);
+    float: right;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+
+.portfolio-entry__gallery-image {
+  @include _(12);
+  margin-top: 0;
+  margin-bottom: $v-unit;
+  img {
+    width: 100%;
+    display: block;
+  }
+}

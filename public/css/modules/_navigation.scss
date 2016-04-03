@@ -1,0 +1,41 @@
+.main-header__nav-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 0.75em;
+  widtH: 100%;
+  @include _(from tablet to infinity) {
+    @include _(12);
+
+    margin-top: $v-unit * 0.5;
+    text-align: left;
+  }
+}
+
+.main-header__nav-item {
+  display: inline-block;
+  @include _(from tablet to infinity) {
+    display: block;
+    float: left;
+
+  }
+
+
+}
+
+.main-header__nav-link {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'nudista-web', Arial, sans-serif;
+  letter-spacing: 0.05em;
+  margin: 0 10px;
+  @include _(from tablet to infinity) {
+    margin-right: 2em;
+
+  }
+
+  &:hover {
+    color: #CDD1E8;
+  }
+}
