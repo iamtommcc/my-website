@@ -7,7 +7,8 @@ html {
   font-size: 62.5%;
   position: relative;
   min-height: 100%;
-  font-family: 'nudista-web', 'DIN', sans-serif;
+  font-family: 'DIN Next W01 Light', 'Trade Gothic', 'Arial', sans-serif;
+  font-weight: 300;
   color: $body-text;
   @include _(mobile) {
     font-size: 50%;
@@ -16,7 +17,6 @@ html {
 body {
   font-size: 2rem; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
-  font-weight: 400;
   margin-bottom: 12em;
 
 
@@ -29,15 +29,16 @@ p {
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
+
   color: $main-purple;
 
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'nudista-web', Arial, sans-serif;
+  font-family:  'DIN Next W01 Medium', 'DIN', 'Arial', sans-serif;
   margin-top: 1px;
   margin-bottom: 2rem;
-  font-weight: 700; }
+  font-weight: 500; }
 h1 { font-size: 5.9rem; line-height: 1.2; }
 h2 { font-size: 4.0rem; line-height: 1.25; }
 h3 { font-size: 3.6rem; line-height: 1.3; }
