@@ -45,10 +45,21 @@
   background-size: 102%;
   background-position: bottom center;
   color: white;
-  padding-top: $v-unit * 2.5;
-  padding-bottom: $v-unit * 1;
+  padding-bottom: $v-unit;
   @include _(clear);
 
+}
+
+.top-block__link {
+  text-decoration: none;
+  box-shadow: inset 0px -1px 0;
+  line-height: 1;
+  display: inline-block;
+  color: white;
+
+  &:hover {
+    color: #c3c2e8;
+  }
 }
 
 .top-block--no-bg,
@@ -63,6 +74,10 @@
 
 
   background: none;
+
+  .top-block__inner {
+    padding-top: $v-unit * 2.5;
+  }
 }
 
 .top-block--black-bg {
@@ -71,8 +86,12 @@
   }
 
   .top-block__byline {
-    color: $light-grey;
+    color: $body-text;
   }
+}
+
+.top-block__headline {
+  margin-bottom: 0;
 }
 
 .top-block--black-bg::before,
@@ -90,6 +109,7 @@
 .top-block__inner {
   max-width: $max-width;
   @include _(clear);
+  padding-top: $v-unit * 2.5;
   margin: 0 auto;
 }
 
@@ -97,17 +117,73 @@
 .top-block__byline {
   @include _(12);
 
+
   @include _(from tablet to infinity) {
     display: block;
     text-align: left;
+
+
   }
 }
 
 
 .top-block__byline {
-  color: #CDD1E8;
-  font-size: 1.3em;
+  color: #c3c2e8;
+  font-size: 1.15em;
   margin-bottom: 0;
+  margin-top: 1em;
+
+}
+
+.top-block--home {
+
+  height: 100vh;
+  min-height: 646px;
+
+  .top-block__inner {
+    padding-top: $v-unit * 3.5;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: linear-gradient(30deg, transparent 49.5%, #ffffff 49.5%, #ffffff 50.5%, transparent 50.5%) no-repeat 0 0;
+  }
+
+  .top-block__headline {
+    opacity: 0;
+    perspective: 500px;
+    margin-bottom: -0.25em;
+
+    animation: top-block-header-animation forwards ease 1s;
+    animation-delay: 0.2s;
+
+  }
+
+  .top-block__buttons {
+    margin: 1.15em 2.5% 0 2.5%;
+    float: left;
+    width: 95%;
+    text-align: center;
+    @include _(from tablet to infinity) {
+      .button {
+        margin-right: 10px;
+        margin-left: 0;
+      }
+      text-align: left;
+    }
+
+
+  }
+
+  .top-block__byline {
+    opacity: 0;
+    perspective: 500px;
+
+    animation: top-block-header-animation forwards ease 1s;
+    animation-delay: 0.9s;
+  }
 }
 
 .top-block--short-width {
@@ -115,8 +191,23 @@
   @include _(from tablet to infinity) {
     .top-block__byline,
     .top-block__headline {
-      @include _(6);
+      max-width: $reading-width;
+      clear: both;
     }
   }
 
+}
+
+@keyframes top-block-header-animation {
+  0% {
+    transform: translate3d(8vw,0,0);
+    opacity: 0;
+
+  }
+
+
+  100% {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
 }

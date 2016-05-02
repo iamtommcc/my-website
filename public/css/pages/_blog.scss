@@ -22,7 +22,7 @@
   max-width: $max-width;
   @include _(clear);
   margin: 0 auto;
-  padding-top: $v-unit;
+  padding-top: $v-unit * 0.5;
 }
 
 .blog-entry {
@@ -33,6 +33,9 @@
   padding-bottom: $v-unit;
 
   .blog {
-    @include _(7);
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    max-width: 650px;
   }
 }

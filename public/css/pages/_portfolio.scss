@@ -7,7 +7,7 @@ main.portfolio {
   max-width: $max-width;
   @include _(clear);
   margin:0 auto;
-  padding-top: $v-unit;
+  padding-top: $v-unit * 2;
 }
 
 .portfolio-entry__text {
@@ -21,7 +21,8 @@ main.portfolio {
     display: block;
     padding: 0;
     margin-top: 0;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    padding: 2em;
+    background: red;
     margin-bottom: 0;
     @include _(6);
     float: right;

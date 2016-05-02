@@ -1,16 +1,18 @@
-$main-purple: rgb(124, 96, 203);
+$main-purple: rgb(112, 105, 207);
 $light-grey: rgb(165, 165, 165);
-$body-text: rgb(73, 82, 88);
+$body-text: #6a6a6a;
 $header-text: rgb(45, 52, 63);
-$max-width: 1300px;
+$max-width: 1100px;
 $v-unit: 4em;
+$reading-width: 700px;
 
 $footer-height: 12em;
 
 @mixin purple-gradient() {
   background-color: #3c3567;
 
-  background-image: radial-gradient(ellipse at 0% bottom, rgba(124, 0, 213, 0.6) 0%, rgba(118, 72, 160, 0) 60%), radial-gradient(ellipse at 90% bottom, #4437a7 0%, rgba(82, 63, 140, 0) 80%);
+  background-image: linear-gradient(320deg, #7d3ee0, #173286);
+
 }
 
 @mixin black-gradient() {

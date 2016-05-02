@@ -4,8 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/main.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-	<title>HTML5 Test Page</title>
+
+	<title>{% if title is defined %}{{ title }}{% else %}tomm.cc{% endif %}</title>
+	<meta name="description" content="{% if description %}{{ description }}{% else %}I am a designer and front-end developer based in Brisbane, Australia.{% endif %}"/>
+
 
 	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/31733690-44ca-4a65-9bda-fc264f54ad23.css"/>
 </head>
@@ -51,11 +55,13 @@
 		<div class="container">
 		<div class="main-footer__cta">
 			<p>Need my help for a development or design project?</p>
-			<a href="mailto:tom@tomm.cc" class="main-footer__contact-button">Get In Touch</a>
+			<a href="mailto:tom@tomm.cc" class="button button--grey-hollow">Get In Touch</a>
 		</div>
 			</div>
 	</footer>
 
 </div>
+<script src="/js/bundle.js"></script>
+
 </body>
 </html>

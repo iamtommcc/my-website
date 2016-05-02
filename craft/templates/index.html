@@ -17,39 +17,56 @@
  # http://craftcms.com/docs/routing
  #}
 
+
+{% set title = entry.title %}
+{% set description = entry.metaDescription %}
 {% extends "_layout" %}
 
 {% block content %}
 
-<section class="top-block">
+<section class="top-block top-block--home top-block--short-width">
  <div class="top-block__inner">
  <h1 class="top-block__headline">Design. Marketing. Everything.</h1>
- <p class="top-block__byline">I am a cool guy.</p>
+ <p class="top-block__byline">I’m a front-end developer and designer
+  based in the glorious humidity of Brisbane, Australia.</p>
+
+
+  <p class="top-block__byline">I am currently help ideas grow over at <a href="https://dreamfarm.com" class="top-block__link">Dreamfarm</a> as Digital Manager.
+   <div class="top-block__buttons">
+   <a class="button button--grey">See My Work ›</a>
+   <a class="button button--grey-hollow">Contact Me</a>
+  </div></p>
+ </p>
   </div>
+
+ </div>
 </section>
 
-<section class="home-featured">
+<div class="home-featured">
  <div class="home-featured__container">
-  {% for entry in craft.entries.section('portfolio') %}
+  {% for entry in entry.featuredProjects %}
 
-   <a href="{{ entry.url }}" class="home-featured__project">
+  <a href="{{ entry.url }}" class="home-featured__project">
+   <div class="home-featured__image-background"
+        style="
+        background-color:{{ entry.gradientColourA }};
+        background-image: linear-gradient(320deg {{ entry.gradientColourA }} {{ entry.gradientColourB }});">
     {% set image = entry.images.first() %}
     {% if image %}
     <img src=" {{ image.url }}" class="home-featured__image">
-    {% endif %}
+    {% endif %}</div>
 
-    <div class="home-featured__bottom">
-     <h3 class="home-featured__title">{{ entry.title }}</h3>
-     <p class="home-featured__description">{% if entry.workCategories | length %}
-      {{ entry.workCategories | join(', ') }}
-      {% endif %}</p>
-    </div>
-   </a>
+   <div class="home-featured__bottom">
+    <h3 class="home-featured__title">{{ entry.title }}</h3>
+    <p class="home-featured__description">{% if entry.workCategories | length %}
+     {{ entry.workCategories | join(', ') }}
+     {% endif %}</p>
+   </div>
+  </a>
 
 
   {% endfor %}
-</div>
-</section>
+ </div>
 
 <section class="home-skills">
  <div class="home-skills__listings">
@@ -79,12 +96,11 @@
 
    <h3 class="home-skills__blog-title">{{ item.title }}</h3>
    <div class="home-skills__blog-date">
-    {{ item.postDate.format('F d, Y') }} - <span class="blog-entries__categories">
+    {{ item.postDate.format('F d, Y') }} <span class="slash">/</span> <span class="blog-entries__categories">
             {% if item.workCategories | length %}
                         {{ item.workCategories | join(', ') }}
                         {% endif %} </span>
    </div>
-   <p class="home-skills__blog-summary">{{ item.summary }}</p>
 
   </a>
 
