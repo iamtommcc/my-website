@@ -42,23 +42,23 @@
  </div>
 </section>
 
-<div class="home-featured">
- <div class="home-featured__container">
+<div class="portfolio-entries portfolio-entries--home">
+ <div class="portfolio-entries__container">
   {% for entry in entry.featuredProjects %}
 
-  <a href="{{ entry.url }}" class="home-featured__project">
-   <div class="home-featured__image-background"
+  <a href="{{ entry.url }}" class="portfolio-entries__project">
+   <div class="portfolio-entries__image-background"
         style="
         background-color:{{ entry.gradientColourA }};
         background-image: linear-gradient(320deg {{ entry.gradientColourA }} {{ entry.gradientColourB }});">
-    {% set image = entry.images.first() %}
+    {% set image = entry.mainImage.first() %}
     {% if image %}
-    <img src=" {{ image.url }}" class="home-featured__image">
+    <img src=" {{ image.url }}" class="portfolio-entries__image">
     {% endif %}</div>
 
-   <div class="home-featured__bottom">
-    <h3 class="home-featured__title">{{ entry.title }}</h3>
-    <p class="home-featured__description">{% if entry.workCategories | length %}
+   <div class="portfolio-entries__bottom">
+    <h3 class="portfolio-entries__title">{{ entry.title }}</h3>
+    <p class="portfolio-entries__description">{% if entry.workCategories | length %}
      {{ entry.workCategories | join(', ') }}
      {% endif %}</p>
    </div>

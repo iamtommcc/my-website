@@ -14,11 +14,11 @@
 	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/31733690-44ca-4a65-9bda-fc264f54ad23.css"/>
 </head>
 <body>
-<div id="top" class="page" role="document">
 	<header role="banner" class="main-header">
-		<nav class="main-header__nav">
+
 
 			<div class="container">
+				<nav class="main-header__nav">
 
 				<ul class="main-header__nav-list">
 					<a href="{{ siteUrl}}">
@@ -37,16 +37,17 @@
 						<a href="{{ siteUrl}}about" class="main-header__nav-link">About</a>
 					</li>
 				</ul>
+				<ul class="social-links main-header__social-links">
+					<li class="social-links__linkedin"><a href="#linkedin"></a></li>
+					<li class="social-links__github"><a href="#github"></a></li>
+					<li class="social-links__email"><a href="mailto:tom@tomm.cc"></a></li>
+				</ul>
+				</nav>
+
 			</div>
-		</nav>
 	</header>
 
-	{% if craft.request.lastSegment == 'portfolio' %}
-	{% set mainClass = 'portfolio' %}
-	{% else %}
-	{% set mainClass = '' %}
-	{% endif %}
-	<main class="{{ mainClass }}">
+	<main>
 		{% block content %}
 		{% endblock %}
 	</main>
@@ -57,10 +58,14 @@
 			<p>Need my help for a development or design project?</p>
 			<a href="mailto:tom@tomm.cc" class="button button--grey-hollow">Get In Touch</a>
 		</div>
+			<ul class="social-links main-footer__social-links">
+				<li class="social-links__linkedin"><a href="#linkedin"></a></li>
+				<li class="social-links__github"><a href="#github"></a></li>
+				<li class="social-links__email"><a href="mailto:tom@tomm.cc"></a></li>
+			</ul>
 			</div>
 	</footer>
 
-</div>
 <script src="/js/bundle.js"></script>
 
 </body>

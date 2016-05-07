@@ -1,88 +1,11 @@
 
-.home-featured {
 
-  &__heading {
-    @include _(12);
-    text-align: left;
-    margin-top: 15rem;
-  }
-}
 
 .home-skills .interface-header {
   margin-bottom: $v-unit * 0.25;
 }
 
-.home-featured__container {
-  @include _(clear);
 
-  max-width: $max-width;
-  margin: ($v-unit * 1.5) auto $v-unit * 1.5 auto;
-}
-
-.home-featured__project {
-  display: block;
-  position: relative;
-  text-decoration: none;
-  @include _(6 12 12);
-  overflow: hidden;
-  background: white;
-  color: $body-text;
-  transform: translate3d(0, ($v-unit * -2.5), 0);
-
-  &:nth-of-type(2) {
-    animation-delay: 0.15s;
-  }
-
-  &:nth-of-type(3) {
-    animation-delay: 0.3s;
-  }
-
-}
-
-.home-featured__image-background {
-  padding: 2em 2em 0 2em;
-}
-
-.home-featured__project:hover {
-
-  .home-featured__bottom {
-    padding-bottom: 2.5em;
-    padding-top: 2.5em;
-    margin-top: -2em;
-
-  }
-
-}
-
-.home-featured__image {
-  width: 100%;
-  display: block;
-
-}
-
-.home-featured__bottom {
-  position: relative;
-  font-size: 0.8em;
-  padding: 1.5em 2.5em;
-  background: #17171B;
-  color: #E4E4E8;
-  transition: all 150ms ease;
-}
-
-.home-featured__title {
-  font-size: 1.5em;
-
-  margin: 0;
-}
-
-.home-featured__title,
-.home-featured__description {
-  position: relative;
-  top: 0;
-  margin-bottom: 0
-
-
-}
 
 .home-skills {
   padding-bottom: $v-unit * 1.5;
@@ -149,14 +72,16 @@
 
 @keyframes featured-portfolio-project {
   0% {
-    transform: translate3d(100vw,0,0);
-    opacity: 0;
+    transform: translate3d(0,-10em,0);
 
   }
 
 
   100% {
     transform: translate3d(0,0,0);
-    opacity: 1;
   }
+}
+
+.portfolio-entries__project--in-view {
+  animation: featured-portfolio-project 0.8s ease forwards;
 }

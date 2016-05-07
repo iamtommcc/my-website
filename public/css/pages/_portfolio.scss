@@ -7,7 +7,10 @@ main.portfolio {
   max-width: $max-width;
   @include _(clear);
   margin:0 auto;
-  padding-top: $v-unit * 2;
+  padding-top: $v-unit * 0.5;
+  @include _(from tablet to infinity) {
+    padding-top: $v-unit * 1.5;
+  }
 }
 
 .portfolio-entry__text {
@@ -35,11 +38,31 @@ main.portfolio {
 
 
 .portfolio-entry__gallery-image {
-  @include _(12);
+  @include _(6 12 12);
   margin-top: 0;
-  margin-bottom: $v-unit;
+  margin-bottom: 5%;
+
   img {
     width: 100%;
     display: block;
   }
+}
+
+.portfolio-entry__gallery-image--big {
+  @include _(12);
+}
+
+.portfolio-entry__main-text {
+  @include _(6 12 12);
+  text-align: left;
+
+
+}
+
+.portfolio-entry__description {
+  color: $body-text;
+}
+
+.portfolio-entry__heading {
+  margin-bottom: 0.25em;
 }

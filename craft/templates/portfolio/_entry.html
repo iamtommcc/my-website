@@ -6,28 +6,31 @@
 
 <section class="top-block top-block--no-bg top-block--short-width">
     <div class="top-block__inner">
-        <figure class="portfolio-entry__main-image">
-            {% set image = entry.images.first() %}
+        <div class="portfolio-entry__main-text">
+            <h1 class="portfolio-entry__heading">{{ entry.title }}</h1>
+            <p class="portfolio-entry__description">{{ entry.summary }}</p>
+        </div>
+        <figure class="portfolio-entry__main-image" style="
+                background-color:{{ entry.gradientColourA }};
+                background-image: linear-gradient(320deg {{ entry.gradientColourA }} {{ entry.gradientColourB }});">
+            {% set image = entry.mainImage.first() %}
             {% if image %}
             <img src=" {{ image.url }}">
             {% endif %}
         </figure>
-        <h1 class="top-block__headline">{{ entry.title }}</h1>
-        <p class="top-block__byline">{{ entry.summary }}</p>
 
     </div>
 </section>
 
 <section class="portfolio-entry">
 
-    {% for image in entry.images.offset(1) %}
+    {% for image in entry.imageMatrix %}
 
-    <figure class="portfolio-entry__gallery-image">
-        <img src="{{ image.url }}">
-    </figure>
+        <figure class="portfolio-entry__gallery-image{{ image.imageSize == 'big' ? ' portfolio-entry__gallery-image--big' : '' }}">
+            <img src="{{ image.imageFile.first().url }}">
+        </figure>
 
     {% endfor %}
-
 
 
 

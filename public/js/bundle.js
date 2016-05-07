@@ -17,7 +17,11 @@ var Homepage = function Homepage() {
   _classCallCheck(this, Homepage);
 
   var scrollShow = new _ScrollShow2.default({
-    query: '.home-featured__project'
+    query: '.portfolio-entries--home .portfolio-entries__project',
+    inViewClass: 'portfolio-entries__project--in-view',
+    debug: true,
+    fireOnce: true
+
   });
 };
 
@@ -45,7 +49,10 @@ var ScrollShow = function () {
             exitMargin: 0,
             query: null,
             debounce: 50,
-            debug: false
+            debug: false,
+            fireOnce: false,
+            outOfViewClass: 'out-of-view',
+            inViewClass: 'in-view'
         };
 
         // Merge defaults with provided values
@@ -94,11 +101,11 @@ var ScrollShow = function () {
 
                     //check to see if this current container is within viewport
                     if (elementBottom >= windowTop && elementTop <= windowBottom) {
-                        scrollElement.classList.add('in-view');
-                        scrollElement.classList.remove('out-of-view');
-                    } else {
-                        scrollElement.classList.add('out-of-view');
-                        scrollElement.classList.remove('in-view');
+                        scrollElement.classList.add(this.options.inViewClass);
+                        scrollElement.classList.remove(this.options.outOfViewClass);
+                    } else if (this.options.fireOnce == false) {
+                        scrollElement.classList.add(this.options.outOfViewClass);
+                        scrollElement.classList.remove(this.options.inViewClass);
                     }
                 }
             } catch (err) {

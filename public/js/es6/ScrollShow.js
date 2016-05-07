@@ -6,9 +6,10 @@ class ScrollShow {
             exitMargin: 0,
             query: null,
             debounce: 50,
-            debug: false
-            outOfViewClass: 'out-of-view';
-            inViewClass: 'in-view';
+            debug: false,
+            fireOnce: false,
+            outOfViewClass: 'out-of-view',
+            inViewClass: 'in-view'
         };
 
         // Merge defaults with provided values
@@ -54,7 +55,7 @@ class ScrollShow {
                 scrollElement.classList.remove(this.options.outOfViewClass)
 
 
-            } else {
+            } else if (this.options.fireOnce == false) {
                 scrollElement.classList.add(this.options.outOfViewClass);
                 scrollElement.classList.remove(this.options.inViewClass);
 

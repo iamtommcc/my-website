@@ -1,0 +1,35 @@
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.social-links__linkedin a {
+  background-image: url('/images/linkedin.svg');
+}
+
+
+.social-links__email a {
+  background-image: url('/images/envelope.svg');
+}
+
+.social-links__github a {
+  background-image: url('/images/github.svg');
+}
