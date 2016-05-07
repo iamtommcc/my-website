@@ -25,6 +25,13 @@ p {
   margin-bottom: 1.6em;
 }
 
+p a {
+  color: $main-purple;
+  text-decoration: none;
+  box-shadow: inset 0px -1px 0;
+  line-height: 1;
+}
+
 .slash {
   transform: skew(-20deg);
   margin: 0 0.25em;

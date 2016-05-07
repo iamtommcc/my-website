@@ -14,7 +14,33 @@
 <section class="blog-entry">
 
     <article class="blog">
-        {{ entry.body }}
+        {% for block in entry.blogMatrix %}
+
+            {% switch block.type %}
+
+            {% case "headingBlock" %}
+
+            <h2 class="blog__heading">{{ block.heading }}</h2>
+
+            {% case "textBlock" %}
+
+            <div class="blog__body">{{ block.body }}</div>
+
+            {% case "imageBlock" %}
+
+            <figure class="blog__image">
+                <img src="{{ block.image.first().url }}">
+                {% if block.caption %}
+                <figcaption class="blog__image-caption">{{ block.caption }}</figcaption>
+                {% endif %}
+            </figure>
+
+            {% case "calloutBlock" %}
+
+            <div class="blog__callout{{ (block.position == 'drop-right' ? ' blog_callout--right' : '') }}">{{ block.body }}</div>
+
+            {% endswitch %}
+        {% endfor %}
     </article>
 
     <div id="disqus_thread"></div>
@@ -23,12 +49,13 @@
          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
          */
-        /*
+
          var disqus_config = function () {
-         this.page.url = {{ entry.url }};  // Replace PAGE_URL with your page's canonical URL variable
-         this.page.identifier = {{ entry.section }}-{{ entry.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         this.page.url = "{{ entry.url }}";  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.title = "{{ entry.title }}";
+         this.page.identifier = "{{ entry.section }}-{{ entry.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
          };
-         */
+
         (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
             var d = document, s = d.createElement('script');
 

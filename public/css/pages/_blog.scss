@@ -35,5 +35,6 @@
   .blog {
     @include _(12);
     max-width: 650px;
+    font-size: 1.1em;
   }
 }
