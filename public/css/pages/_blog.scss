@@ -32,9 +32,33 @@
   padding-top: $v-unit;
   padding-bottom: $v-unit;
 
+  @include _(mobile) {
+    line-height: 1.45;
+    font-size: 0.95em;
+
+    li {
+      margin-left: 1.15em;
+    }
+  }
+
   .blog {
     @include _(12);
     max-width: 650px;
     font-size: 1.1em;
   }
+
+  a {
+    color: $main-purple;
+    text-decoration: none;
+    box-shadow: inset 0px -1px 0;
+    line-height: 1;
+    display: inline-block;
+    transition: box-shadow 250ms ease;
+
+    &:hover {
+      box-shadow: inset 0 0 0;
+    }
+  }
+
+
 }

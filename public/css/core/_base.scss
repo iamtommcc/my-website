@@ -10,10 +10,6 @@ html {
 }
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-a {
-  color: #1EAEDB; }
-a:hover {
-  color: #0FA0CE; }
 
 .container {
   @include _(clear);
