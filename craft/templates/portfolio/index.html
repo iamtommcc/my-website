@@ -18,7 +18,7 @@
 
             <a href="{{ entry.url }}" class="portfolio-entries__project" style="
                     background-color:{{ entry.gradientColourA }};
-                    background-image: linear-gradient(320deg {{ entry.gradientColourA }} {{ entry.gradientColourB }});">
+                    background-image: linear-gradient(320deg, {{ entry.gradientColourA }}, {{ entry.gradientColourB }});">
                 {% set image = entry.mainImage.first() %}
                 {% if image %}
                 <img src=" {{ image.url }}" class="portfolio-entries__image">

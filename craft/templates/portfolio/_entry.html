@@ -8,11 +8,11 @@
     <div class="top-block__inner">
         <div class="portfolio-entry__main-text">
             <h1 class="portfolio-entry__heading">{{ entry.title }}</h1>
-            <p class="portfolio-entry__description">{{ entry.summary }}</p>
+            <p class="portfolio-entry__description">{{ entry.body }}</p>
         </div>
         <figure class="portfolio-entry__main-image" style="
                 background-color:{{ entry.gradientColourA }};
-                background-image: linear-gradient(320deg {{ entry.gradientColourA }} {{ entry.gradientColourB }});">
+                background-image: linear-gradient(320deg, {{ entry.gradientColourA }}, {{ entry.gradientColourB }});">
             {% set image = entry.mainImage.first() %}
             {% if image %}
             <img src=" {{ image.url }}">
