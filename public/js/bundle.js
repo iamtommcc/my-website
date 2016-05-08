@@ -17,8 +17,8 @@ var Homepage = function Homepage() {
   _classCallCheck(this, Homepage);
 
   var scrollShow = new _ScrollShow2.default({
-    query: '.portfolio-entries--home .portfolio-entries__project',
-    inViewClass: 'portfolio-entries__project--in-view',
+    query: '.portfolio-entries--home',
+    inViewClass: 'portfolio-entries--in-view',
     debug: true,
     fireOnce: true
 

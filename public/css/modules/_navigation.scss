@@ -12,11 +12,14 @@
 }
 
 .main-header__nav-item {
-  display: inline-block;
-  @include _(from tablet to infinity) {
     display: block;
     float: left;
+  margin-left: 0.5em;
 
+  margin-top: 0.5em;
+  @include _(from tablet to infinity) {
+    margin-left: 1.5em;
+    margin-top: 0;
   }
 
 
