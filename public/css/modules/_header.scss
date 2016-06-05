@@ -200,16 +200,9 @@
   }
 }
 
-.top-block--short-width {
 
-  @include _(from tablet to infinity) {
-    .top-block__byline,
-    .top-block__headline {
-      max-width: $reading-width;
-      clear: both;
-    }
-  }
-
+.top-block--centered .top-block__inner {
+  max-width: 800px;
 }
 
 @keyframes top-block-header-animation {

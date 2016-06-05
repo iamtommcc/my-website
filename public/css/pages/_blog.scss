@@ -27,7 +27,7 @@
 
 .blog-entry {
   @include _(clear);
-  max-width: $max-width;
+  max-width: 800px;
   margin: 0 auto;
   padding-top: $v-unit;
   padding-bottom: $v-unit;
@@ -42,8 +42,9 @@
   }
 
   .blog {
+    width: 100%;
+    margin: 0 auto;
     @include _(12);
-    max-width: 650px;
     font-size: 1.1em;
   }
 
@@ -52,7 +53,6 @@
     text-decoration: none;
     box-shadow: inset 0px -1px 0;
     line-height: 1;
-    display: inline-block;
     transition: box-shadow 250ms ease;
 
     &:hover {
