@@ -19,9 +19,7 @@ var Homepage = function Homepage() {
   var scrollShow = new _ScrollShow2.default({
     query: '.portfolio-entries--home',
     inViewClass: 'portfolio-entries--in-view',
-    debug: true,
     fireOnce: true
-
   });
 };
 
