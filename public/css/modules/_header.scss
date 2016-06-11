@@ -114,7 +114,8 @@
 }
 
 .top-block__headline,
-.top-block__byline {
+.top-block__byline,
+.top-block__date {
   @include _(12);
 
 
@@ -126,10 +127,16 @@
   }
 }
 
+.top-block__date {
+  margin-left: 2.5%;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  color: rgba(255,255,255,0.75);
+}
 
 .top-block__byline {
-  color: #c3c2e8;
-  font-size: 1.15em;
+  color: rgba(255,255,255,0.75);
+  font-size: 1.25em;
   margin-bottom: 0;
   margin-top: 1em;
 

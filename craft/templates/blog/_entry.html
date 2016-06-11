@@ -6,6 +6,7 @@
 
 <section class="top-block top-block--short-width top-block--centered">
     <div class="top-block__inner">
+        <div class="top-block__date">{{ entry.postDate | date("j F Y") }}</div>
         <h1 class="top-block__headline">{{ entry.title }}</h1>
         <p class="top-block__byline" style="clear:left;">{{ entry.summary }}</p>
     </div>
