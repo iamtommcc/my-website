@@ -46,15 +46,14 @@
  <div class="portfolio-entries__container">
   {% for entry in entry.featuredProjects %}
 
-  <a href="{{ entry.url }}" class="portfolio-entries__project">
-   <div class="portfolio-entries__image-background"
-        style="
-        background-color:{{ entry.gradientColourA }};
-        background-image: linear-gradient(320deg {{ entry.gradientColourA }} {{ entry.gradientColourB }});">
+  <a href="{{ entry.url }}" class="portfolio-entries__project"  style="
+          background-color:{{ entry.gradientColourA }};
+          background-image: linear-gradient(320deg, {{ entry.gradientColourA }}, {{ entry.gradientColourB }});">
+
     {% set image = entry.mainImage.first() %}
     {% if image %}
     <img src=" {{ image.url }}" class="portfolio-entries__image">
-    {% endif %}</div>
+    {% endif %}
 
    <div class="portfolio-entries__bottom">
     <h3 class="portfolio-entries__title">{{ entry.title }}</h3>
