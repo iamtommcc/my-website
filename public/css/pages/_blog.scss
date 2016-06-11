@@ -62,3 +62,8 @@
 
 
 }
+
+#disqus_thread {
+  @include _(12);
+  max-width: $reading-width;
+}

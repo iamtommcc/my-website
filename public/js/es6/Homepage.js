@@ -6,9 +6,7 @@ export default class Homepage {
     let scrollShow = new ScrollShow({
       query: '.portfolio-entries--home',
       inViewClass: 'portfolio-entries--in-view',
-      debug: true,
       fireOnce: true
-
     });
   }
 }
