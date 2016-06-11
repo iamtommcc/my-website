@@ -27,7 +27,7 @@
 
 .blog-entry {
   @include _(clear);
-  max-width: 800px;
+  max-width: $reading-width;
   margin: 0 auto;
   padding-top: $v-unit;
   padding-bottom: $v-unit;
