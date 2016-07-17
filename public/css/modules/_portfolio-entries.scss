@@ -23,6 +23,10 @@
   &:nth-child(even) {
     float: right;
   }
+
+  &:nth-child(odd) {
+    clear: left;
+  }
   margin-bottom: 5%;
   overflow: hidden;
   background: white;
