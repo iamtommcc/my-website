@@ -2,9 +2,10 @@
   list-style-type: none;
   padding: 0;
   text-align: center;
-  margin-top: 0.75em;
   widtH: 100%;
+  margin-top: 2em;
   @include _(from tablet to infinity) {
+    margin-top: 0.75em;
 
     margin-top: $v-unit * 0.5;
     text-align: right;

@@ -20,7 +20,7 @@ main.portfolio {
 .portfolio-entry__main-image {
   display: none;
 
-  @include _(from tablet to infinity) {
+  @include _(from desktop to infinity) {
     display: block;
     margin-top: 0;
     padding: 2em 2em 2em;
