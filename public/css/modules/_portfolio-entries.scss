@@ -19,6 +19,10 @@
   position: relative;
   text-decoration: none;
   @include _(6 12 12);
+
+  &:nth-child(even) {
+    float: right;
+  }
   margin-bottom: 5%;
   overflow: hidden;
   background: white;
