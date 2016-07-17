@@ -1,5 +1,5 @@
 .button {
-  padding: 0.3em 1.4em;
+  padding: 0.2em 1.4em;
   height: auto;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -7,6 +7,11 @@
   font-weight: 500;
   border: 0;
   border-radius: 0;
+}
+
+.button--purple {
+  color: $main-purple;
+  border: 1px solid;
 }
 
 .button--grey {
